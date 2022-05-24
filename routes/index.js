@@ -6,4 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/imagenesDocker', function(req, res, next) {
+  res.render('imagenesDocker', { title: 'Imagenes de Docker' });
+});
+
+router.get('/infoEquip', function(req, res, next) {
+  res.render('infoEquip', { title: 'Informacion del Equipo' });
+});
+
 module.exports = router;
