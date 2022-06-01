@@ -7,15 +7,19 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var hbs = require('hbs');
 var smarthphonesRouter = require('./routes/smartphones');
-
 
 mongoose.connect('mongodb+srv://IngSoftwareEquipo:IngSoftwareEquipo@is2proyectoingsoftwaree.zlmno.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true
 }).then(() => { console.log('Conexión a base de datos exitosa')})
 .catch((err) => console.log('Error:', err));
 
+
 var app = express();
+
+hbs.registerPartials(__dirname + '/views/partials');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
