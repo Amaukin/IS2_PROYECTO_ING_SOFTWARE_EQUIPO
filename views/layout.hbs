@@ -3,8 +3,19 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
   </head>
   <body>
+    {{> header}}
     {{{body}}}
   </body>
 </html>
