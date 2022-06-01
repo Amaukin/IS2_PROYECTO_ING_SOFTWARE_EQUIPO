@@ -18,4 +18,8 @@ router.get('/infoEquip', function(req, res, next) {
   res.render('infoEquip', { title: 'Informacion del Equipo' });
 });
 
+router.get('/contenedores', function(req, res, next) {
+  res.render('contenedores', { title: 'Contenedores' });
+});
+
 module.exports = router;
