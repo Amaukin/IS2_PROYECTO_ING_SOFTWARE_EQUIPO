@@ -10,4 +10,12 @@ router.get('/introducciondocker', function(req, res, next) {
   res.render('introduccionDocker', { title: 'Introducción Docker' });
 });
 
+router.get('/imagenesDocker', function(req, res, next) {
+  res.render('imagenesDocker', { title: 'Imagenes de Docker' });
+});
+
+router.get('/infoEquip', function(req, res, next) {
+  res.render('infoEquip', { title: 'Informacion del Equipo' });
+});
+
 module.exports = router;
