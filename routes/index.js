@@ -14,8 +14,8 @@ router.get('/imagenesDocker', function(req, res, next) {
   res.render('imagenesDocker', { title: 'Imagenes de Docker' });
 });
 
-router.get('/infoEquip', function(req, res, next) {
-  res.render('infoEquip', { title: 'Informacion del Equipo' });
+router.get('/infoEquipo', function(req, res, next) {
+  res.render('infoEquipo', { title: 'Informacion del Equipo' });
 });
 
 router.get('/contenedores', function(req, res, next) {
