@@ -1,15 +1,13 @@
-<div class="container-fluid p-0 bg-light">
-
+<div class="bg-dark">
 <!-- Masthead-->
 <header class="masthead">
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
             <div class="text-center">
-              <h1 class="display-1">
-                  <span class="text-primary ">C O N T E</span>
-                  <span class="text-warning">N E D O R E S</span>
-              </h1>
+                <h1 class="text-warning bg-dark mx-auto my-0 text-uppercase">CICLO DE VIDA DE LOS CONTENEDORES</h1>
 
+                <h2 class="text-white-50"> Un vistazo a el cico de vida de los contenedores</h2>
+                <a class="btn btn-primary" href="#about">Comienza</a>
             </div>
         </div>
     </div>
@@ -19,17 +17,14 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8">
-                <h2 class="text-info mb-4">¿Qué son los contenedores?</h2>
-                <p class="text-primary px-7">
-                   Docker empaqueta software en unidades estandarizadas llamadas contenedores que incluyen todo lo necesario
-                   para que el software se ejecute, incluidas bibliotecas, herramientas de sistema, código y tiempo de ejecución.
-                   Con Docker, puede implementar y ajustar la escala de aplicaciones rápidamente en cualquier entorno con la
-                   certeza de saber que su código se ejecutará.
+                <h2 class="text-white mb-4">el ciclo de vida de los contenedores docker</h2>
+                <p class="text-white-50">
+                    El ciclo de vida del contenedor son las diferentes etapas por las que recorre un contenedor Docker con distintos comandos. Comienza desde que hacemos la descarga desde Docker Hub hasta que es removido o eliminado
 
                 </p>
             </div>
         </div>
-        <img width="696px" height="696px" src="https://pandorafms.com/blog/wp-content/uploads/2016/03/docker-cloud-logo.png" alt="" >
+        <img width="696px" height="435px" src="https://www.linuxteaching.com/storage/img/images_3/docker_container_statuses.png" alt="" >
     </div>
 </section>
 <!-- Projects-->
@@ -37,32 +32,33 @@
     <div class="container px-4 px-lg-5">
         <!-- Featured Project Row-->
         <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-            <div class="col-xl-8 col-lg-7"><img width="424px" height="313px" src="https://www.javiergarzas.com/wp-content/uploads/2015/07/docker1.png" alt="" > </div>
+            <div class="col-xl-8 col-lg-7"><img width="696px" height="435px" src="" alt="" > </div>
 
             <div class="col-xl-4 col-lg-5">
                 <div class="featured-text text-center text-lg-left">
                     <h4>   </h4>
-                    <p class="text-black-100 mb-0"> La ejecución de Docker en AWS les ofrece a desarrolladores y administradores una manera muy confiable y
-                     económica de crear, enviar y ejecutar aplicaciones distribuidas en cualquier escala </p>
+                    <p class="text-black-100 mb-0">Hay diferentes etapas cuando creamos un contenedor Docker que se conoce como ciclo de vida del contenedor Docker.
+
+                        Un Algunos de los estados son:Creado: un contenedor que se ha creado pero no se ha iniciado,en ejecución: un contenedor en ejecución con todos sus procesos.En pausa: un contenedor cuyos procesos se han pausado.Detenido: Un contenedor cuyos procesos han sido detenidos.Eliminado: Un contenedor en estado muerto.</p>
                 </div>
             </div>
         </div>
         <!-- Project One Row-->
         <div class="row gx-0 mb-5 mb-lg-0 ">
-            <div><img width="1044px" height="400px" src="https://blog.carreralinux.com.ar/wp-content/uploads/2020/06/docker_imagenes_contenedores.png" alt="" ></div>
+            <div><img width="1044px" height="400px" src="https://media-temporary.preziusercontent.com/frames-public/4/9/a/a/3/7f56982486f98e11184ed992e2f380.jpeg" alt="" ></div>
             <div class="col-lg-6">
                 <div class="bg-black text-center h-100 project">
                     <div class="d-flex h-100">
                         <div class="project-text w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-light bg-dark">Docker como aislamiento</h4>
-                            <p class="mb-0 text-white-10">Cada contenedor Docker tiene su propio sistema de archivos, su propia pila de red (y, por lo tanto, su propia dirección IP), su propio espacio de proceso y limitaciones de recursos definidas para la CPU y la memoria. Dado que un contenedor Docker no tiene que iniciar un sistema operativo, se inicia de inmediato. Docker es aislamiento, es decir, separa los recursos de un sistema operativo host, a diferencia de la virtualización que proporciona un sistema operativo invitado por encima del sistema operativo host.</p>
+                            <h4 class="text-light bg-dark">contenedores Docker</h4>
+                            <p class="mb-0 text-white-10">Crear Contenedores:El uso del comando docker create creará un nuevo contenedor de Docker con la imagen de docker especificada.Contenedor de inicio: Para iniciar un contenedor detenido, podemos usar el comando docker start.Ejecutar contenedor: El comando docker run hará el trabajo de los comandos "docker create" y "docker start". Este comando creará un nuevo contenedor y ejecutará la imagen en el contenedor recién creado.Contenedor de pausa:Si queremos pausar los procesos que se ejecutan dentro del contenedor, podemos usar el comando “docker pause”.Contenedor en stop:Detener un Contenedor en ejecución significa detener todos los procesos que se ejecutan en ese Contenedor. Detener no significa matar o terminar el proceso.Eliminar contenedor:Eliminar o eliminar el contenedor significa destruir todos los procesos que se ejecutan dentro del contenedor y luego eliminar el Contenedor.</p>
                             <hr class="d-none d-lg-block mb-0 ms-0" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-      
+</section>
 
 <!-- Contact-->
 <section class="contact-section bg-black">
@@ -74,7 +70,7 @@
                         <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                         <h4 class="text-uppercase m-0">Nombre</h4>
                         <hr class="my-4 mx-auto" />
-                        <div class="small text-black-50">Brandon Noé Roldan Granados</div>
+                        <div class="small text-black-50">Carlos Alberto De jesus Velasco</div>
                     </div>
                 </div>
             </div>
@@ -84,7 +80,7 @@
                         <i class="fas fa-envelope text-primary mb-2"></i>
                         <h4 class="text-uppercase m-0">Correo Institucional</h4>
                         <hr class="my-4 mx-auto" />
-                        <div class="small text-black-50"><a href="#!">brandonroldan88@aragon.unam.mx</a></div>
+                        <div class="small text-black-50"><a href="#!">carlosdejesus370@aragon.unam.mx</a></div>
                     </div>
                 </div>
             </div>
@@ -94,7 +90,7 @@
                         <i class="fas fa-mobile-alt text-primary mb-2"></i>
                         <h4 class="text-uppercase m-0">Número de cuenta</h4>
                         <hr class="my-4 mx-auto" />
-                        <div class="small text-black-50">419100388</div>
+                        <div class="small text-black-50">419107370</div>
                     </div>
                 </div>
             </div>
