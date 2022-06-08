@@ -26,4 +26,8 @@ router.get('/directivasDockerfile', function(req, res, next) {
   res.render('directivasDockerfile', { title: 'Directivas Dockerfile' });
 });
 
+router.get('/ciclodevida', function(req, res, next) {
+  res.render('ciclodevida', { title: 'ciclo de vida de los contenedores' });
+});
+
 module.exports = router;
