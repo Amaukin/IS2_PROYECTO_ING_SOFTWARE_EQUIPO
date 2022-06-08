@@ -72,6 +72,52 @@ router.delete('/:id', async function (req, res, next) {
     }
   })
 });
+
+/* PUT smartphone to update. */
+router.put('/:id', async function (req, res, next) {
+  var smartphoneId = req.params.id;
+  var smartphoneEncontrado = await Smartphone.findOne({ _id: smartphoneId });
+  if (smartphoneEncontrado) {
+    if (req.body.modelo) smartphoneEncontrado.modelo = req.body.modelo;
+    if (req.body.precio) {
+      smartphoneEncontrado.precio = req.body.precio;
+    } else {
+      if (smartphoneEncontrado.precio) { await smartphoneEncontrado.update({ $unset: { precio: '' } }); await smartphoneEncontrado.save() };
+    }
+    if (req.body.color) {
+      smartphoneEncontrado.color = req.body.color;
+    } else {
+      if (smartphoneEncontrado.color) { await smartphoneEncontrado.update( { $unset: {color : ''} }); await smartphoneEncontrado.save() };
+    }
+    if (req.body.marca) {
+      smartphoneEncontrado.marca = req.body.marca;
+    } else {
+      if (smartphoneEncontrado.marca) { await smartphoneEncontrado.update({ $unset: { marca: '' } }); await smartphoneEncontrado.save() };
+    }
+    if (req.body.almacenamientoGB) {
+      smartphoneEncontrado.almacenamientoGB = req.body.almacenamientoGB;
+    } else {
+      if (smartphoneEncontrado.almacenamientoGB) { await smartphoneEncontrado.update({ $unset: { almacenamientoGB: '' } }); await smartphoneEncontrado.save() };
+    }
+    if (req.body.ramGB) {
+      smartphoneEncontrado.ramGB = req.body.ramGB;
+    } else {
+      if (smartphoneEncontrado.ramGB) { await smartphoneEncontrado.update({ $unset: { ramGB: '' } }); await smartphoneEncontrado.save() };
+    }
+    if (req.body.imagen) {
+      smartphoneEncontrado.imagen = req.body.imagen;
+    } else {
+      if (smartphoneEncontrado.imagen) { await smartphoneEncontrado.update({ $unset: { imagen: '' } }); await smartphoneEncontrado.save() };
+    }
+
+    await smartphoneEncontrado.save();
+    var smartphoneActualizado = await Smartphone.findOne({ _id: smartphoneId });
+
+    res.send(smartphoneActualizado);
+  } else {
+    res.send(404, SMARTPHONE_NO_EXISTE);
+  }
+});
   
 function sanitizarSmartphone(reqBody) {
   if (reqBody.precio === '') delete reqBody.precio;
