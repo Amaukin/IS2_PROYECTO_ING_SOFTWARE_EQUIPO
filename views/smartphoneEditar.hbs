@@ -1,0 +1,48 @@
+<div class="nuevo-smartphone-form d-flex flex-row justify-content-center text-light mt-5">
+    <form action="http://localhost:3000/api/{{smartphone._id}}?isEdit=true" method="post" class="text-center">
+    <div class="d-flex flex-row">
+        <div class="mx-3">
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo" name="modelo"  
+                    {{#ifCond smartphone.modelo undefined}} value=""
+                    {{else}} value="{{smartphone.modelo}}"{{/ifCond}} placeholder="Modelo del smartphone"  required>
+            </div>
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" class="form-control" id="marca" name="marca" {{#ifCond smartphone.marca undefined}} value=""
+                    {{else}} value="{{smartphone.marca}}" {{/ifCond}} placeholder="Marca del smartphone">
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input type="text" class="form-control" id="precio" name="precio" {{#ifCond smartphone.precio undefined}} value=""
+                    {{else}} value="{{smartphone.precio}}"{{/ifCond}} placeholder="$ Precio">
+            </div>
+            <div class="form-group">
+                <label for="color">Color</label>
+                <input type="text" class="form-control" id="color" name="color" {{#ifCond smartphone.color undefined}} value=""
+                    {{else}} value="{{smartphone.color}}" {{/ifCond}} placeholder="Color">
+            </div>
+        </div>
+        <div class="mx-3">
+            <div class="form-group">
+                <label for="almacenamientoGB">Almacenaje en GB</label>
+                <input type="text" class="form-control" id="almacenamientoGB" name="almacenamientoGB" {{#ifCond smartphone.almacenamientoGB undefined}} value=""
+                    {{else}} value="{{smartphone.almacenamientoGB}}"{{/ifCond}} placeholder="Almacenaje en GB">
+            </div>
+            <div class="form-group">
+                <label for="ramGB">RAM en GB</label>
+                <input type="text" class="form-control" id="ramGB" name="ramGB" {{#ifCond
+                    smartphone.ramGB undefined}} value="" {{else}} value="{{smartphone.ramGB}}" {{/ifCond}}
+                    placeholder="RAM en GB">
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input type="text" class="form-control" id="imagen" name="imagen" {{#ifCond smartphone.imagen undefined}} value=""
+                    {{else}} value="{{smartphone.imagen}}"{{/ifCond}} placeholder="URL de la imagen">
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Editar smartphone</button>
+    </form>
+</div>
