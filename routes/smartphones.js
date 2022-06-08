@@ -10,17 +10,6 @@ router.get('/', function(req, res, next) {
   })
 });
 
-function sanitizarSmartphone(reqBody) {
-  if (reqBody.precio === '') delete reqBody.precio;
-  if (reqBody.color === '') delete reqBody.color;
-  if (reqBody.marca === '') delete reqBody.marca;
-  if (reqBody.almacenamientoGB === '') delete reqBody.almacenamientoGB;
-  if (reqBody.ramGB === '') delete reqBody.ramGB;
-  if (reqBody.imagen === '') delete reqBody.imagen;
-  return reqBody
-}
-
-module.exports = router;
 
 /* POST smartphone. */
 router.post('/', async function (req, res, next) {
@@ -50,3 +39,15 @@ router.post('/', async function (req, res, next) {
     });
   }
 });
+
+function sanitizarSmartphone(reqBody) {
+  if (reqBody.precio === '') delete reqBody.precio;
+  if (reqBody.color === '') delete reqBody.color;
+  if (reqBody.marca === '') delete reqBody.marca;
+  if (reqBody.almacenamientoGB === '') delete reqBody.almacenamientoGB;
+  if (reqBody.ramGB === '') delete reqBody.ramGB;
+  if (reqBody.imagen === '') delete reqBody.imagen;
+  return reqBody
+}
+
+module.exports = router;
