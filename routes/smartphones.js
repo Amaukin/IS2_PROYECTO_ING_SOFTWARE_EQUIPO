@@ -3,9 +3,11 @@ const { default: mongoose } = require('mongoose');
 var Smartphone = require('../models/smartphone')
 var router = express.Router();
 
-/* GET users listing. */
+/* GET smartphones listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  Smartphone.find({}, function (err, smartphones) {
+    res.json(smartphones);
+  })
 });
 
 module.exports = router;
