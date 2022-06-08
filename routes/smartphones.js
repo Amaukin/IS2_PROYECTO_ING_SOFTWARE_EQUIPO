@@ -71,4 +71,16 @@ router.post('/', async function (req, res, next) {
       }
     });
   }
+
+/* DELETE smartphone. */
+router.delete('/:id', async function (req, res, next) {
+  Smartphone.findByIdAndDelete(req.params.id, (err) => {
+    if (err) {
+      res.send(500, ERROR_ENCONTRADO + err);
+    } else {
+      res.send(SMARTPHONE_ELIMINADO);
+    }
+  })
+});
+  
 });
