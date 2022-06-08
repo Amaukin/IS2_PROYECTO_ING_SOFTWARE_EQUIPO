@@ -1,0 +1,41 @@
+<div class="nuevo-smartphone-form d-flex flex-row justify-content-center text-light mt-5">
+    <form action="http://localhost:3000/api/?redirect=true" method="post" class="text-center">
+    <div class="d-flex flex-row">
+        <div class="mx-3">
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo" name="modelo" value="" placeholder="Modelo del smartphone"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" class="form-control" id="marca" name="marca" value="" placeholder="Marca del smartphone">
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input type="text" class="form-control" id="precio" name="precio" value="" placeholder="$ Precio">
+            </div>
+            <div class="form-group">
+                <label for="color">Color</label>
+                <input type="text" class="form-control" id="color" name="color" value="" placeholder="Color">
+            </div>
+        </div>
+        <div class="mx-3">
+            <div class="form-group">
+                <label for="almacenamientoGB">Almacenaje en GB</label>
+                <input type="text" class="form-control" id="almacenamientoGB" name="almacenamientoGB" 
+                    value="" placeholder="Almacenaje en GB">
+            </div>
+            <div class="form-group">
+                <label for="ramGB">RAM en GB</label>
+                <input type="text" class="form-control" id="ramGB" name="ramGB" value="" placeholder="RAM en GB">
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input type="text" class="form-control" id="imagen" name="imagen" value="" placeholder="URL de la imagen">
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar smartphone</button>
+    </form>
+</div>
