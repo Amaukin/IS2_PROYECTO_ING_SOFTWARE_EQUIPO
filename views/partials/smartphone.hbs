@@ -1,0 +1,19 @@
+{{#each this}}
+    <div class="d-flex justify-content-center">
+        <div class="myCard border-secondary mb-4 bg-secondary text-light w-100" style="box-shadow: 0 4px 8px 0 rgba(194, 194, 194, 0.2); border-radius: 10px;">
+            <div style="background-color: #FFF;border-radius: 10px;">
+                <img class="card-img-top py-3" style="height: 250px; width: auto !important; display: block; margin: 0 auto;" src="{{this.imagen}}"
+                onerror="this.src='https://www.iconpacks.net/icons/2/free-mobile-phone-icon-2636-thumb.png'">
+            </div>
+            <div class="card-body text-text">
+                <h5 class="card-title text-center">{{this.modelo}}</h5>
+                {{#if this.marca}}
+                    <p class="card-subtitle text-xl-right text-info">{{this.marca}}</p>
+                {{/if}}
+            </div>
+            <div class="card-footer text-right border-secondary">
+                <a href="/smartphones/{{this._id}}" class="btn btn-secondary">Detalles</a>
+            </div>
+        </div>
+    </div>
+{{/each}}

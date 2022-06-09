@@ -1,0 +1,8 @@
+<div class="display-4 text-center mb-5 mt-2 text-light">{{title}}</div>
+<div class="container">
+    {{#each smartphonesGrid}}
+    <div class="" style="display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 30px;">
+        {{> smartphone this}}
+    </div>
+    {{/each}}
+</div>
