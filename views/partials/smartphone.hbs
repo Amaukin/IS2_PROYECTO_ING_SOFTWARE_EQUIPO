@@ -1,8 +1,10 @@
 {{#each this}}
-    <div class="col-sm d-flex justify-content-center">
-        <div class="card border-secondary mb-4 bg-primary text-light" style="max-width: 12rem; min-width:12rem">
-            <img class="card-img-top bg-light py-3" style="height: 10rem" src="{{this.imagen}}"
+    <div class="d-flex justify-content-center">
+        <div class="myCard border-secondary mb-4 bg-secondary text-light w-100" style="box-shadow: 0 4px 8px 0 rgba(194, 194, 194, 0.2); border-radius: 10px;">
+            <div style="background-color: #FFF;border-radius: 10px;">
+                <img class="card-img-top py-3" style="height: 250px; width: auto !important; display: block; margin: 0 auto;" src="{{this.imagen}}"
                 onerror="this.src='https://www.iconpacks.net/icons/2/free-mobile-phone-icon-2636-thumb.png'">
+            </div>
             <div class="card-body text-text">
                 <h5 class="card-title text-center">{{this.modelo}}</h5>
                 {{#if this.marca}}

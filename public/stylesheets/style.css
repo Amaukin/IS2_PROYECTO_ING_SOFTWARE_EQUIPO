@@ -110,3 +110,35 @@ li:hover {
   border-radius: 5px;
   font-weight: bold;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.detailPage {
+  height: calc(100vh - 47px);
+  background-color: white;
+}
+
+.detailCard {
+  border-radius: 12px;
+  border: 1px solid #d2d2d7;
+  margin: 20px 0;
+}
+
+.ul-dropdown li a {
+  display: block;
+  text-decoration: none;
+}
+
+.ul-dropdown li:hover{
+  background-color: var(--secondary);
+}
+.ul-dropdown li:hover a {
+  color: white;
+}
+
+.dropdown-container a:hover{
+  color: #FFF;
+  text-decoration: none;
+}
