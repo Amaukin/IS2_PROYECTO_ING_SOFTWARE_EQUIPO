@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var hbs = require('hbs');
 var smarthphonesRouter = require('./routes/smartphones');
+var smarthphonesFrontRouter = require('./routes/smartphonesFront');
 
 mongoose.connect('mongodb+srv://IngSoftwareEquipo:IngSoftwareEquipo@is2proyectoingsoftwaree.zlmno.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true
@@ -19,6 +20,14 @@ mongoose.connect('mongodb+srv://IngSoftwareEquipo:IngSoftwareEquipo@is2proyectoi
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
+
+
+hbs.registerHelper('ifCond', function (v1, v2, options) {
+  if (v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api', smarthphonesRouter);
+app.use('/smartphones', smarthphonesFrontRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

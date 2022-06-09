@@ -30,4 +30,8 @@ router.get('/ciclodevida', function(req, res, next) {
   res.render('ciclodevida', { title: 'ciclo de vida de los contenedores' });
 });
 
+router.get('/archivodockerfile', function(req, res, next) {
+  res.render('archivoDockerfile', { title: 'Archivo Dockerfile' });
+});
+
 module.exports = router;

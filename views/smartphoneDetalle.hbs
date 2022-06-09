@@ -1,0 +1,91 @@
+<div class="d-flex flex-column text-light">
+    <div class="display-4 text-center">{{smartphone.modelo}}</div>
+    <h5 class="text-center mb-5 text-info">{{smartphone.marca}}</h5>
+</div>
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col">
+            <img class="card-img-top" src="{{smartphone.imagen}}"
+                onerror="this.src='https://www.kindpng.com/picc/m/52-526072_unknown-character-hd-png-download.png'">
+        </div>
+        <div class="container col align-self-center">
+            {{#if smartphone.precio}}
+                <div class="row">
+                    <div class="card col border-light">
+                        <div class="d-flex flex-column">
+                            <h3 class="my-3">Precio</h3>
+                            <div>
+                                <h5>
+                                    <span class="badge badge-light">{{smartphone.precio}}</span>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+            {{#if smartphone.color}}
+                <div class="row">
+                    <div class="card col border-light">
+                        <div class="d-flex flex-column">
+                            <h3>Color</h3>
+                            <h3 class="my-3">{{smartphone.color}}</h3>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+            {{#if smartphone.almacenamientoGB}}
+                <div class="row">
+                    <div class="card col border-light">
+                        <div class="d-flex flex-column">
+                            <h3>Capacidad de almacenaje</h3>
+                            <h3 class="my-3">{{smartphone.almacenamientoGB}}GB</h3>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+            {{#if smartphone.ramGB}}
+            <div class="row">
+                <div class="card col border-light">
+                    <div class="d-flex flex-column">
+                        <h3>Memoria RAM</h3>
+                        <h3 class="my-3">{{smartphone.ramGB}}GB</h3>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    <div class="text-right">
+        <a href="/smartphones/editar-smartphone/{{smartphone._id}}" class="btn btn-primary">Editar</a>
+        <!-- Boton modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dialogoConfirmacion">
+            Eliminar
+        </button>
+        
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="dialogoConfirmacion" tabindex="-1" role="dialog" aria-labelledby="dialogoConfirmacionLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dialogoConfirmacionLabel">Eliminar {{smartphone.marca}} {{smartphone.modelo}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Estás a punto de eliminar {{smartphone.marca}} {{smartphone.modelo}}, <br> ¿Confirmar?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                <form action="http://localhost:3000/api/{{smartphone._id}}?isDelete=true" method="post">
+                    <button id="boton-eliminar" type="submit"
+                        class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

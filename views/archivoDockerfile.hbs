@@ -1,0 +1,44 @@
+<div class="text-light">
+<h1  class="text-center pt-3 pb-4 display-1">DockerFile</h1>
+
+<div class="text-center">
+  <img src="/Images/df.jpg" class="rounded-circle pb-5" alt="...">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div style="max-width: 18rem;">
+        <div class="card-body border border-light">
+            <h5 class="card-title">¿Qué es?</h5>
+            <p class="card-text">Un DockerFile es un documento de texto que contiene todos los comandos que queramos ejecutar en la linea de comandos para armar una imágen. Esta imágen se creará mediante el comando docker build que irá siguiendo las instrucciones.</p>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+      <div style="max-width: 18rem;">
+        <div class="card-body border border-light">
+            <h5 class="card-title">Docker build</h5>
+            <p class="card-text">Antes de hablar de los Dockerfiles vamos a hablar un poco del comando docker build que es el que ejecutaremos una vez tenemos las instrucciones a seguir en un archivo.</p>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+      <div style="max-width: 18rem;">
+        <div class="card-body border border-light">
+            <h5 class="card-title">Creación de la imagen</h5>
+            <p class="card-text">El comando docker build arma una imágen siguiendo las instrucciones de un DockerFile que se puede encontrar en el directorio actual o un repositorio. La creación de la imágen es ejecutada por el daemon de Docker. Es importante tener en cuenta que docker build le manda todo el contexto del directorio actual al daemon, por lo que es buena práctica colocar el DockerFile en un directorio limpio y agregar los archivos necesarios en ese directorio en caso de ser necesario.</p>
+    </div>
+    </div>
+    </div>
+     <div class="col">
+      <div style="max-width: 18rem;">
+        <div class="card-body border border-light">
+            <h5 class="card-title">Docker Daemon</h5>
+             <p class="card-text">El Docker Daemon corre las instrucciones en un Dockerfile linea por linea y va lanzando los resultados en pantalla. Un punto importante es que cada instrucción es ejecutada en nuevas imágenes, hasta que muestra el ID de la imágen resultante una vez finalizada las instrucciones, el daemon irá haciendo una limpieza automáticamente de las imágenes intermedias.</p>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
