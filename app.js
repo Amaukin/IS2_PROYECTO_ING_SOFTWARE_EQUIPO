@@ -4,13 +4,30 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var mongoose = require('mongoose');
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var hbs = require('hbs');
+var smarthphonesRouter = require('./routes/smartphones');
+var smarthphonesFrontRouter = require('./routes/smartphonesFront');
+
+mongoose.connect('mongodb+srv://IngSoftwareEquipo:IngSoftwareEquipo@is2proyectoingsoftwaree.zlmno.mongodb.net/?retryWrites=true&w=majority', {
+  useNewUrlParser: true
+}).then(() => { console.log('Conexión a base de datos exitosa')})
+.catch((err) => console.log('Error:', err));
+
 
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
+
+
+hbs.registerHelper('ifCond', function (v1, v2, options) {
+  if (v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,7 +40,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api', smarthphonesRouter);
+app.use('/smartphones', smarthphonesFrontRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
